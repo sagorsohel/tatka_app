@@ -12,6 +12,7 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final formKey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(),
       body: SingleChildScrollView(
@@ -24,33 +25,82 @@ class SignupScreen extends StatelessWidget {
                 "Sign Up",
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
-              TextField(
-                decoration: InputDecoration(
-                  label: Text(
-                    'username',
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.outlineVariant),
-                  ),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  label: Text(
-                    'username',
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.outlineVariant),
-                  ),
-                ),
-              ),
-              TextField(
-                decoration: InputDecoration(
-                  label: Text(
-                    'username',
-                    style: Theme.of(context).textTheme.labelMedium?.copyWith(
-                        color: Theme.of(context).colorScheme.outlineVariant),
-                  ),
-                ),
-              ),
+              BlocBuilder<SignupBloc, SignupState>(builder: (context, state) {
+                if (state is SignupInitial) {
+                  return Form(
+                      key: formKey,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          TextFormField(
+                            controller: state.userNameController,
+                            decoration: InputDecoration(
+                              label: Text(
+                                'username',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outlineVariant),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return 'Please enter your username';
+                              }
+                              return null;
+                            },
+                          ),
+                          TextFormField(
+                            controller: state.emailController,
+                            decoration: InputDecoration(
+                              label: Text(
+                                'email',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outlineVariant),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return 'Please enter your email';
+                              }
+                              return null;
+                            },
+                          ),
+                          TextFormField(
+                            controller: state.passwordController,
+                            decoration: InputDecoration(
+                              label: Text(
+                                'Password',
+                                style: Theme.of(context)
+                                    .textTheme
+                                    .labelMedium
+                                    ?.copyWith(
+                                        color: Theme.of(context)
+                                            .colorScheme
+                                            .outlineVariant),
+                              ),
+                            ),
+                            validator: (value) {
+                              if (value == null || value == '') {
+                                return 'Please enter your password';
+                              }
+                              return null;
+                            },
+                          ),
+                        ],
+                      ));
+                } else {
+                  return Container();
+                }
+              }),
               const Gap(20),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -77,7 +127,11 @@ class SignupScreen extends StatelessWidget {
         ),
       ),
       bottomNavigationBar: BottomButton(
-          onTap: () => context.pushNamed(Routes.REGISTER_ROUTE),
+          onTap: () {
+            if (formKey.currentState!.validate()) {
+              print('v');
+            }
+          },
           text: 'Sign Up'),
     );
   }

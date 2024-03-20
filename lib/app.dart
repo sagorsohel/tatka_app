@@ -15,6 +15,7 @@ class BlocEcommerceApp extends StatelessWidget {
       providers: [
         BlocProvider(create: (context) => SplashCubit()..startSplash()),
         BlocProvider(create: (context) => RememberSwitchCubit()),
+        BlocProvider(create: (context) => SignupBloc()),
         // BlocProvider(create: (context)=> WrapperCubit()),
       ],
       child: ScreenUtilInit(
