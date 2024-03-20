@@ -1,8 +1,11 @@
+import 'package:bloc_ecommerce/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:go_router/go_router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
+
+import '../widgets/widgets.dart';
 
 class WelcomeScreen extends StatelessWidget {
   const WelcomeScreen({super.key});
@@ -26,18 +29,18 @@ class WelcomeScreen extends StatelessWidget {
               children: [
                 SocialLoginButton(
                   buttonType: SocialLoginButtonType.facebook,
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
                 ),
                 const Gap(10), // Adds an empty space of 20 pixels.
 
                 SocialLoginButton(
                   buttonType: SocialLoginButtonType.twitter,
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
                 ),
                 const Gap(10),
                 SocialLoginButton(
                   buttonType: SocialLoginButtonType.google,
-                  onPressed: () {},
+                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
                 ),
               ],
             ),
@@ -53,22 +56,16 @@ class WelcomeScreen extends StatelessWidget {
                     style: Theme.of(context).textTheme.bodyMedium?.copyWith(
                         color: Theme.of(context).colorScheme.onSurface),
                   ),
-                  TextButton(onPressed: () {}, child: Text("Sign in"))
+                  TextButton(
+                      onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
+                      child: Text("Sign in"))
                 ],
               ),
-              Container(
-                color: Theme.of(context).colorScheme.onPrimaryContainer,
-                height: 40.h,
-                child: Center(
-                  child: Text(
-                    "Create An Account",
-                    style: Theme.of(context).textTheme.labelLarge?.copyWith(
-                        color: Theme.of(context).colorScheme.onSecondary),
-                  ),
-                ),
-              ),
+              BottomButton(
+                  onTap: () => context.pushNamed(Routes.REGISTER_ROUTE),
+                  text: 'Create a new account')
             ],
-          )
+          ),
         ],
       ),
     );

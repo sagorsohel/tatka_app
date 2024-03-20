@@ -5,6 +5,19 @@ class SignupScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Scaffold(
+      appBar: AppBar(),
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Text(
+              "Sign Up",
+              style: Theme.of(context).textTheme.headlineLarge,
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
