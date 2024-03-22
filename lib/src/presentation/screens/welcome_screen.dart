@@ -1,6 +1,8 @@
+import 'package:bloc_ecommerce/src/blocs/authentication/login_bloc.dart';
 import 'package:bloc_ecommerce/src/routes/route_pages.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import 'package:go_router/go_router.dart';
 import 'package:social_login_buttons/social_login_buttons.dart';
@@ -22,28 +24,41 @@ class WelcomeScreen extends StatelessWidget {
             "Let's Get Started",
             style: Theme.of(context).textTheme.headlineLarge,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15.0),
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                SocialLoginButton(
-                  buttonType: SocialLoginButtonType.facebook,
-                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
-                ),
-                const Gap(10), // Adds an empty space of 20 pixels.
+          BlocConsumer<LoginBloc, LoginState>(
+            listener: (context, state) {
+              // TODO: implement listener
+            },
+            builder: (context, state) {
+              if (state is LoginLoading) {
+                return const Center(
+                  child: CircularProgressIndicator(),
+                );
+              }
+              return Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    SocialLoginButton(
+                      buttonType: SocialLoginButtonType.facebook,
+                      onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
+                    ),
+                    const Gap(10), // Adds an empty space of 20 pixels.
 
-                SocialLoginButton(
-                  buttonType: SocialLoginButtonType.twitter,
-                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
+                    SocialLoginButton(
+                      buttonType: SocialLoginButtonType.twitter,
+                      onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
+                    ),
+                    const Gap(10),
+                    SocialLoginButton(
+                        buttonType: SocialLoginButtonType.google,
+                        onPressed: () => context
+                            .read<LoginBloc>()
+                            .add(RequestGoogleLogin())),
+                  ],
                 ),
-                const Gap(10),
-                SocialLoginButton(
-                  buttonType: SocialLoginButtonType.google,
-                  onPressed: () => context.pushNamed(Routes.LOGIN_ROUTE),
-                ),
-              ],
-            ),
+              );
+            },
           ),
           Column(
             mainAxisSize: MainAxisSize.min,
