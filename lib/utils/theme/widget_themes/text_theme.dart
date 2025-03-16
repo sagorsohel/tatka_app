@@ -1,117 +1,131 @@
 import 'package:flutter/material.dart';
+import 'package:tatka_app/utils/constants/colors.dart';
 
-class CustomTextTheme {
-  CustomTextTheme._();
+/// Custom Class for Light & Dark Text Themes
+class TTextTheme {
+  TTextTheme._(); // To avoid creating instances
+
+  /// Customizable Light Text Theme
   static TextTheme lightTextTheme = TextTheme(
-    headlineLarge: TextStyle().copyWith(
-      color: Colors.black,
-      fontSize: 32,
+    headlineLarge: const TextStyle().copyWith(
+      fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      fontFamily: 'Poppins',
+      color: themeColors.dark,
     ),
-    headlineMedium: TextStyle().copyWith(
-      color: Colors.black,
-      fontSize: 24,
+    headlineMedium: const TextStyle().copyWith(
+      fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      fontFamily: 'Poppins',
+      color: themeColors.dark,
     ),
+    headlineSmall: const TextStyle().copyWith(
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      color: themeColors.dark,
+    ),
+
     titleLarge: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
     titleMedium: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
     titleSmall: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
 
     bodyLarge: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
     bodyMedium: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
     bodySmall: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.black.withOpacity(0.5),
+      color: themeColors.dark.withOpacity(0.5),
     ),
 
     labelLarge: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black,
+      color: themeColors.dark,
     ),
     labelMedium: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.black.withOpacity(0.5),
+      color: themeColors.dark.withOpacity(0.5),
     ),
   );
+
+  /// Customizable Dark Text Theme
   static TextTheme darkTextTheme = TextTheme(
-    headlineLarge: TextStyle().copyWith(
-      color: Colors.white,
-      fontSize: 32,
+    headlineLarge: const TextStyle().copyWith(
+      fontSize: 32.0,
       fontWeight: FontWeight.bold,
-      fontFamily: 'Poppins',
+      color: themeColors.light,
     ),
-    headlineMedium: TextStyle().copyWith(
-      color: Colors.white,
-      fontSize: 24,
+    headlineMedium: const TextStyle().copyWith(
+      fontSize: 24.0,
       fontWeight: FontWeight.w600,
-      fontFamily: 'Poppins',
+      color: themeColors.light,
     ),
+    headlineSmall: const TextStyle().copyWith(
+      fontSize: 18.0,
+      fontWeight: FontWeight.w600,
+      color: themeColors.light,
+    ),
+
     titleLarge: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w600,
-      color: Colors.white,
+      color: themeColors.light,
     ),
     titleMedium: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: themeColors.light,
     ),
     titleSmall: const TextStyle().copyWith(
       fontSize: 16.0,
       fontWeight: FontWeight.w400,
-      color: Colors.white,
+      color: themeColors.light,
     ),
 
     bodyLarge: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white,
+      color: themeColors.light,
     ),
     bodyMedium: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: themeColors.light,
     ),
     bodySmall: const TextStyle().copyWith(
       fontSize: 14.0,
       fontWeight: FontWeight.w500,
-      color: Colors.white.withOpacity(0.5),
+      color: themeColors.light.withOpacity(0.5),
     ),
 
     labelLarge: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white,
+      color: themeColors.light,
     ),
     labelMedium: const TextStyle().copyWith(
       fontSize: 12.0,
       fontWeight: FontWeight.normal,
-      color: Colors.white.withOpacity(0.5),
+      color: themeColors.light.withOpacity(0.5),
     ),
   );
 }
