@@ -7,11 +7,15 @@ class AppTheme {
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     primaryColor: Colors.blue,
+    fontFamily: 'Poppins',
+    scaffoldBackgroundColor: Colors.white,
     textTheme: CustomTextTheme.lightTextTheme,
   );
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
-    primaryColor: Colors.black,
-    textTheme: CustomTextTheme.darkTextTheme,
+    primaryColor: Colors.blue,
+    fontFamily: 'Poppins',
+    scaffoldBackgroundColor: Colors.black,
+    textTheme: CustomTextTheme.lightTextTheme,
   );
 }
