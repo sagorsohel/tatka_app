@@ -11,15 +11,12 @@ class TAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: themeColors.black, size: themeSizes.iconMd),
-    actionsIconTheme: IconThemeData(
-      color: themeColors.black,
-      size: themeSizes.iconMd,
-    ),
+    iconTheme: IconThemeData(color: TColors.black, size: TSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: TColors.black, size: TSizes.iconMd),
     titleTextStyle: TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: themeColors.black,
+      color: TColors.black,
     ),
   );
   static const darkAppBarTheme = AppBarTheme(
@@ -28,15 +25,12 @@ class TAppBarTheme {
     scrolledUnderElevation: 0,
     backgroundColor: Colors.transparent,
     surfaceTintColor: Colors.transparent,
-    iconTheme: IconThemeData(color: themeColors.black, size: themeSizes.iconMd),
-    actionsIconTheme: IconThemeData(
-      color: themeColors.white,
-      size: themeSizes.iconMd,
-    ),
+    iconTheme: IconThemeData(color: TColors.black, size: TSizes.iconMd),
+    actionsIconTheme: IconThemeData(color: TColors.white, size: TSizes.iconMd),
     titleTextStyle: TextStyle(
       fontSize: 18.0,
       fontWeight: FontWeight.w600,
-      color: themeColors.white,
+      color: TColors.white,
     ),
   );
 }

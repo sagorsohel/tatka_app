@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:tatka_app/utils/constants/colors.dart';
 import 'package:tatka_app/utils/theme/widget_themes/appbar_theme.dart';
 import 'package:tatka_app/utils/theme/widget_themes/bottom_sheet_theme.dart';
 import 'package:tatka_app/utils/theme/widget_themes/checkbox_theme.dart';
@@ -9,18 +8,20 @@ import 'package:tatka_app/utils/theme/widget_themes/outlined_button_theme.dart';
 import 'package:tatka_app/utils/theme/widget_themes/text_field_theme.dart';
 import 'package:tatka_app/utils/theme/widget_themes/text_theme.dart';
 
+import '../constants/colors.dart';
+
 class TAppTheme {
   TAppTheme._();
 
   static ThemeData lightTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: themeColors.grey,
+    disabledColor: TColors.grey,
     brightness: Brightness.light,
-    primaryColor: themeColors.primary,
+    primaryColor: TColors.primary,
     textTheme: TTextTheme.lightTextTheme,
     chipTheme: TChipTheme.lightChipTheme,
-    scaffoldBackgroundColor: themeColors.white,
+    scaffoldBackgroundColor: TColors.white,
     appBarTheme: TAppBarTheme.lightAppBarTheme,
     checkboxTheme: TCheckboxTheme.lightCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.lightBottomSheetTheme,
@@ -32,12 +33,12 @@ class TAppTheme {
   static ThemeData darkTheme = ThemeData(
     useMaterial3: true,
     fontFamily: 'Poppins',
-    disabledColor: themeColors.grey,
+    disabledColor: TColors.grey,
     brightness: Brightness.dark,
-    primaryColor: themeColors.primary,
+    primaryColor: TColors.primary,
     textTheme: TTextTheme.darkTextTheme,
     chipTheme: TChipTheme.darkChipTheme,
-    scaffoldBackgroundColor: themeColors.black,
+    scaffoldBackgroundColor: TColors.black,
     appBarTheme: TAppBarTheme.darkAppBarTheme,
     checkboxTheme: TCheckboxTheme.darkCheckboxTheme,
     bottomSheetTheme: TBottomSheetTheme.darkBottomSheetTheme,

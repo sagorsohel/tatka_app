@@ -6,16 +6,16 @@ class TBottomSheetTheme {
 
   static BottomSheetThemeData lightBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: themeColors.white,
-    modalBackgroundColor: themeColors.white,
+    backgroundColor: TColors.white,
+    modalBackgroundColor: TColors.white,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   );
 
   static BottomSheetThemeData darkBottomSheetTheme = BottomSheetThemeData(
     showDragHandle: true,
-    backgroundColor: themeColors.black,
-    modalBackgroundColor: themeColors.black,
+    backgroundColor: TColors.black,
+    modalBackgroundColor: TColors.black,
     constraints: const BoxConstraints(minWidth: double.infinity),
     shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
   );

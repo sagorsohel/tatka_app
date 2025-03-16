@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tatka_app/utils/constants/colors.dart';
-import 'package:tatka_app/utils/constants/sizes.dart';
+import '../../constants/colors.dart';
+import '../../constants/sizes.dart';
 
 /// Custom Class for Light & Dark Text Themes
 class TCheckboxTheme {
@@ -8,19 +8,17 @@ class TCheckboxTheme {
 
   /// Customizable Light Text Theme
   static CheckboxThemeData lightCheckboxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(themeSizes.xs),
-    ),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs)),
     checkColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return themeColors.white;
+        return TColors.white;
       } else {
-        return themeColors.black;
+        return TColors.black;
       }
     }),
     fillColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return themeColors.primary;
+        return TColors.primary;
       } else {
         return Colors.transparent;
       }
@@ -29,19 +27,17 @@ class TCheckboxTheme {
 
   /// Customizable Dark Text Theme
   static CheckboxThemeData darkCheckboxTheme = CheckboxThemeData(
-    shape: RoundedRectangleBorder(
-      borderRadius: BorderRadius.circular(themeSizes.xs),
-    ),
+    shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(TSizes.xs)),
     checkColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return themeColors.white;
+        return TColors.white;
       } else {
-        return themeColors.black;
+        return TColors.black;
       }
     }),
     fillColor: WidgetStateProperty.resolveWith((states) {
       if (states.contains(WidgetState.selected)) {
-        return themeColors.primary;
+        return TColors.primary;
       } else {
         return Colors.transparent;
       }
